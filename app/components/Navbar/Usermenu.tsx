@@ -4,9 +4,10 @@ import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import {BiGlobe} from "react-icons/bi";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const registerModal = useRegisterModal();
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
@@ -20,7 +21,7 @@ const UserMenu = () => {
         >
           Airbnb your home
         </button>
-        <button className="hidden py-3 px-4 md:block rounded-full hover:bg-neutral-100 transition cursor-pointer" onClick={()=> {}}>
+        <button className="hidden py-3 px-4  lg:block rounded-full hover:bg-neutral-100 transition cursor-pointer" onClick={()=> {}}>
           <BiGlobe size={16}/> 
         </button>
         </div>
@@ -38,10 +39,10 @@ const UserMenu = () => {
       </div>
       {isOpen && (
         <div className="absolute rounded-xl shadow-md w-[40vw]  md:w-2/4 lg:w-2/4 xl:w-1/4 bg-white overflow-hidden right-0 top-12 text-sm">
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex flex-col ">
             <>
-              <MenuItem onClick={()=>{}} label="Menu" />
-              <MenuItem onClick={()=>{}} label="Sign up" />
+
+              <MenuItem onClick={registerModal.onOpen} label="Sign up" />
               <MenuItem onClick={()=>{}} label="Sign out" />
             </>
           </div>

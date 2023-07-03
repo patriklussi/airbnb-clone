@@ -1,4 +1,4 @@
-import {  } from "@next/font/google"
+import {  } from "next/font/google"
 
 export default function Head() {
  
