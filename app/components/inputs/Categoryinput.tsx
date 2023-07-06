@@ -9,7 +9,7 @@ interface CategoryInputProps {
     onClick: (value:string) => void;
 }
 
-const CategoryInput = ({icon :Icon,label,selected,onClick}: CategoryInputProps) => {
+const CategoryInput = ({icon :Icon,label,selected,onClick,}: CategoryInputProps) => {
   return (
     <div className={`
         rounded-xl
@@ -21,6 +21,7 @@ const CategoryInput = ({icon :Icon,label,selected,onClick}: CategoryInputProps) 
         hover:border-black
         transition
         cursor-pointer
+        z-50
         ${selected ? `border-black` : `border-neutral-200`}
     `}  onClick={() => onClick(label)}>
         <Icon size={24}/>

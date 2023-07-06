@@ -58,7 +58,7 @@ const UserMenu = ({ currentUser }: UsermenuProps) => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute rounded-xl shadow-md w-[40vw]  md:w-2/4 lg:w-2/4 xl:w-1/4 bg-white overflow-hidden right-0 top-12 text-sm">
+        <div className="absolute rounded-xl shadow-md w-[40vw]  md:w-2/4 lg:w-2/4 xl:w-1/3 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col ">
             {currentUser ? (
               <>
