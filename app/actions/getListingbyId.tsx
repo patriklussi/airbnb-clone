@@ -27,7 +27,7 @@ return {
     createdAt: listing.createdAt.toISOString(),
     user: {
         ...listing.user,
-        created: listing.user.createdAt.toISOString(),
+        createdAt: listing.user.createdAt.toISOString(),
         updatedAt: listing.user.createdAt.toISOString(),
         emailVerified: listing.user.emailVerified?.toISOString() || null
 
