@@ -9,7 +9,7 @@ interface CategoryInputProps {
     onClick: (value:string) => void;
 }
 
-const Categoryinput = ({icon :Icon,label,selected,onClick,}: CategoryInputProps) => {
+const CategoryInput = ({icon :Icon,label,selected,onClick,}: CategoryInputProps) => {
   return (
     <div className={`
         rounded-xl
@@ -32,4 +32,4 @@ const Categoryinput = ({icon :Icon,label,selected,onClick,}: CategoryInputProps)
   )
 }
 
-export default Categoryinput;
+export default CategoryInput;
