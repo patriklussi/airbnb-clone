@@ -1,5 +1,4 @@
 "use client";
-import CategoryInput from "../inputs/CategoryInput";
 import useRentModal from "@/app/hooks/useRentModal";
 import Modal from "./Modal";
 import { useMemo, useState } from "react";
@@ -14,7 +13,7 @@ import Input from "../inputs/Input";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-
+import CategoryInput from "../inputs/CategoryInput";
 
 enum STEPS {
   CATEGOREY = 0,
