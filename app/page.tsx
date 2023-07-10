@@ -2,16 +2,19 @@ import {  } from "next/font/google"
 import ClientOnly from "./components/ClientOnly"
 import Container from "./components/Container"
 import EmptyState from "./components/EmptyState";
-import getListings from "./actions/getListings";
+import getListings, { IlistingsParams } from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
 import getCurrentUser from "./actions/getCurrentUser";
 import { SafeListing } from "./types";
 
+interface HomeProps {
+  searchParams: IlistingsParams;
+}
 
-
-export default async function Home() {
-  const listings  = await getListings()
+const Home = async ({searchParams}:HomeProps) =>  {
   const currentUser = await getCurrentUser();
+  const listings  = await getListings(searchParams);
+ 
   console.log(listings);
   if(listings.length === 0){
     return (
@@ -34,3 +37,5 @@ export default async function Home() {
     
   )
 } 
+
+export default Home;
