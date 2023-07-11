@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import {  } from "next/font/google"
 import ClientOnly from "./components/ClientOnly"
 import Container from "./components/Container"
