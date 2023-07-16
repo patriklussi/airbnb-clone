@@ -10,10 +10,11 @@ interface ModalProps {
   title?: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
-  actionLabel: string;
+  actionLabel?: string;
   disabled?: boolean;
   secondaryAction?: () => void;
   secondaryActionLabel?: string;
+  wide?: boolean;
 }
 const Modal = ({
   isOpen,
@@ -26,6 +27,7 @@ const Modal = ({
   disabled,
   secondaryAction,
   secondaryActionLabel,
+  wide = false,
 }: ModalProps) => {
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -60,25 +62,27 @@ const Modal = ({
   }, [secondaryAction, disabled]);
 
   if (!isOpen) {
-   return null;
+    return null;
   }
   return (
     <>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focous:outline-none bg-neutral-800/70">
         <section
-          className="
+          className={`
         relative
         w-full
-        md:w-4/6
-        lg:2-3/6
-        xl:w-2/5
+       
+        ${wide ? `md:w-3/5` : `  md:w-4/6`}
+        ${wide ? `md:w-3/5` : `       lg:2-3/6`}
+        ${wide ? `md:w-3/5` : `     xl:w-2/5`}
+     
         my-6
         mx-auto
         h-full
         lg:h-auto
         md:h-auto
     
-    "
+    `}
         >
           {/* CONTENT */}
           <div
@@ -122,16 +126,16 @@ const Modal = ({
                       onClick={handleSecondaryAction}
                     />
                   )}
-
-                  <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                    onClick={handleSubmit}
-                  />
+                  {actionLabel && (
+                    <Button
+                      disabled={disabled}
+                      label={actionLabel}
+                      onClick={handleSubmit}
+                    />
+                  )}
                 </div>
                 {footer}
               </footer>
-
             </div>
           </div>
         </section>

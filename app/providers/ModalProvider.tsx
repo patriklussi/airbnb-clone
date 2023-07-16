@@ -1,3 +1,4 @@
+import LanguageModal from '../components/modals/LanguageModal'
 import LoginModal from '../components/modals/LoginModal'
 import RegisterModal from '../components/modals/RegisterModal'
 import RentModal from '../components/modals/RentModal'
@@ -10,6 +11,7 @@ const ModalProvider = () => {
         <RegisterModal/>
         <RentModal/>
         <SearchModal/>
+        <LanguageModal/>
     </>
   )
 }
