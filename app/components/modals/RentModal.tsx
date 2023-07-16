@@ -37,7 +37,8 @@ const RentModal = () => {
     setValue,
     watch,
     formState: { errors },
-    reset
+    reset,
+    getValues
   } = useForm<FieldValues>({
     defaultValues: {
       category: "",
@@ -97,7 +98,7 @@ const RentModal = () => {
     }
     return "Next";
   }, [step]);
-
+  console.log(getValues());
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.CATEGOREY) {
       return undefined;
